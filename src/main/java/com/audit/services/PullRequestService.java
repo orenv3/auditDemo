@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.audit.entities.PullRequest;
 import com.audit.entities.PullRequestWarraper;
 import com.audit.entities.pojo.PullRequestResponse;
-import com.audit.printscreen.PrintScreen;
+import com.audit.printscreen.PullRequestScreenshot;
 import com.audit.repo.PullRequestRepo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +24,8 @@ public class PullRequestService implements PullRequestServiceIntf{
 	@Override
 	public PullRequestResponse createPullRequest(PullRequestWarraper pullRequestWarraper) {
 		log.debug("creating PullRequestWarraper details: " + pullRequestWarraper);
-		PrintScreen p = new PrintScreen(pullRequestWarraper);
-		p.start();
+		PullRequestScreenshot pullRequestScreenshot = new PullRequestScreenshot(pullRequestWarraper);
+		pullRequestScreenshot.start();
 		PullRequest pr = pullRequestWarraper.getPull_request();
 		log.debug("creating pull request details: " + pr);
 		PullRequestResponse response = new PullRequestResponse();

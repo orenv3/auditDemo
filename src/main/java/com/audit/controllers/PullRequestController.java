@@ -38,4 +38,5 @@ public class PullRequestController {
 		log.debug("getPullRequestList API executed ");
 		return pullRequestServiceIntf.getAllPullRequests();
 	}
+	
 }
