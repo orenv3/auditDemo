@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.audit.entities.Picture;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.Getter;
@@ -29,7 +30,8 @@ public class PrintScreen extends Thread{
 	String BASE_DIRECTOEY_PATH;  
 	StringBuilder strBuilder;
 	String url;
-
+	Picture picture;
+	
 	void createFilePath(String path) {
 		File directory = new File(path);
 		if (!(directory.exists())) {
@@ -52,6 +54,11 @@ public class PrintScreen extends Thread{
 		strBuilder.append(part3);
 	}
 
+	void savePrintScreenInDb() {
+		
+	}
+	
+	
 	@Override
 	public void run() {
 
