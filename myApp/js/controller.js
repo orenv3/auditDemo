@@ -5,7 +5,7 @@ function GeneralController($scope, PullRequest, $http, $window){
 $scope.pullRequestObj=null;
 $scope.pullRequestList=[];
 $scope.pullRequestId=0;
-$scope.basicUrl = "C:\\pullRequest_screenshots\\";
+$scope.basicUrl = "C://pullRequest_screenshots/";
 $scope.url="";
 
 
@@ -25,8 +25,8 @@ $scope.getPullRequestDetailes = function (){
 	}
 
 	$scope.getPicture = function(){
-		$scope.url= "file:///"+$scope.basicUrl + $scope.pullRequestObj.picture.pictureName + ".png";
-		//$window.open($scope.url,'_blank');	
+		$scope.url= "file://"+$scope.basicUrl + $scope.pullRequestObj.picture.pictureName + ".png";
+		$window.open($scope.url,'_blank');	
 	}
 
 
